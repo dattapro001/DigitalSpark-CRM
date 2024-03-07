@@ -1,0 +1,38 @@
+<div class="container-fluid w-50" style="position: absolute; z-index: 4; margin-top: 130px; margin-left: 300px;">
+  <div class="alert alert-info alert-dismissible" id="instruction-container" style="display: none;">
+    <header class="d-flex">
+      <i class="fa fa-bullhorn" style="font-size:24px"></i>
+      <strong class="mx-2">Instructions!</strong>
+      <a href="#" id="close-instructions" class="close" style="margin-left: 430px; position:ab text-decoration: none; font-size: 20px; margin-top: -6px;"><i class="fa fa-close" style="font-size:20px;color: black;"></i></a>
+    </header>
+    <div class="mt-3">
+      <ul class="mt-5" style="list-style-type: none;">
+        <!-- Your list items here -->
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Button to show alert -->
+  <button id="showAlertButton" onclick="showAlert()">Show Alert</button>
+</div>
+
+<script>
+function showAlert() {
+  // Show the alert container
+  document.getElementById("instruction-container").style.display = "block";
+
+  // Optionally, you can also mark instructions as shown in local storage here if needed
+  // localStorage.setItem("instructionsShown", "true");
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Add click event listener to close button
+  document.getElementById("close-instructions").addEventListener("click", function() {
+    // Hide the instructions
+    document.getElementById("instruction-container").style.display = "none";
+
+    // Optionally, you can also mark instructions as shown in local storage here if needed
+    // localStorage.setItem("instructionsShown", "true");
+  });
+});
+</script>

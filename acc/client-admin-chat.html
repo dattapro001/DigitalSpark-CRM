@@ -1,0 +1,108 @@
+<?php 
+ include 'config.php';
+ $message = "";
+   session_start();
+    if(isset($_SESSION['unique_id'])){
+   $user_id = $_SESSION['unique_id'];
+   $query ="SELECT * FROM `messages` WHERE incoming_msg_id='$user_id'";
+   $allData = mysqli_query($conn,$query);
+   $arrayData = mysqli_fetch_array($allData);
+   
+   if(isset($_POST['send_msg'])){
+    $result= mysqli_query($conn,"SELECT * FROM `admin`");
+    $data = mysqli_fetch_assoc($result);
+    $outgoing_id = $data['unique_id'];
+    $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
+    $sql =  mysqli_query($conn, "INSERT INTO messages (incoming_msg_id, outgoing_msg_id, msg)
+    VALUES ('{$incoming_id}', '{$outgoing_id}', '{$message}')") or die(mysqli_error($conn));
+    
+  }
+}else{
+//   header("location: ../login.php");
+}
+$result= mysqli_query($conn,"SELECT * FROM `admin`");
+$data = mysqli_fetch_assoc($result);
+$outgoing_id = $data['unique_id'];
+$incoming_id = $user_id;
+$smg = "";
+$sql = "SELECT * FROM messages LEFT JOIN admin ON admin.unique_id = messages.outgoing_msg_id
+WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id})
+OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id}) ORDER BY msg_id";
+$query = mysqli_query($conn, $sql);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+     </style>
+    <title>DigitalSpark CRM</title>
+   
+</head>
+<body style="background-color: #f4f4f4;">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card bg-info" style="margin-top: 50px; border-radius: 10px;height: 550px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <header style="border-bottom: 2px solid #ddd; width: 810px; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                                <ion-icon name="arrow-back"></ion-icon>
+                                <img src="images/admin-1.png" class="mx-4" style="width:25px; height: 25px;">
+                                <h5>Admin Panel</h5>
+                                <ion-icon name="settings-outline"></ion-icon>
+                            </header>
+                            <div class="chat-area" style="position: relative; overflow-y: auto; width: 800px; height: 490px; padding: 10px;">
+
+                            <?php
+                             if(mysqli_num_rows($query) > 0){
+                                while($row = mysqli_fetch_assoc($query)){
+                                    if($row['outgoing_msg_id'] === $outgoing_id){
+
+                                        $smg .=' <div class="incoming-chat" style="display: flex; margin-bottom: 10px;">
+                                        <img src="images/mugdho.jpeg" style="width:25px; height: 25px;">
+                                        <div class="card" style="max-width: 70%; padding: 10px; border-radius: 10px; background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                                        <p>'. $row['msg'] .'</p>
+                                        </div>
+                                    </div>';
+                                    }else{
+                                        $smg .='  <div class="outgoing-chat" style="display: flex; margin-bottom: 10px; justify-content: flex-end;">
+                                        <div class="card" style="max-width: 70%; padding: 10px; border-radius: 10px; background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                                        <p>'. $row['msg'] .'</p>
+                                        </div>
+                                    </div>
+                                </div>';
+                                    }
+                                }
+                             }
+                            ?>
+                            
+                               
+                              
+                            <form method="post">
+                            <div class="input-group" style="width: 790px; margin-top: 450px;">
+                                <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden >
+                                <input type="text" class="form-control" placeholder="Type your message...">
+                                <button class="btn btn-primary">Send</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+

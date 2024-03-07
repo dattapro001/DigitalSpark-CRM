@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Contact Form</title>
+    <style>
+        /* contact section styling */
+*
+{
+margin: 0;
+padding: 0;
+}
+
+body{
+    background-color: #08a0e9;
+    font-family: sans-serif;
+}
+
+.contact-box{
+width: 500px;
+background-color: #fff;
+box-shadow: 0 0 20px 0 #999;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+position: absolute;
+padding: 50px;
+}
+
+.heading{
+    color: rgb(64, 63, 63);
+    text-align: center;
+}
+
+.input-field{
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 15px;
+    outline: none;
+}
+.textarea-field{
+   height: 150px; 
+   padding-top: 10px;
+}
+
+.btn{
+    border-radius: 10px;
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(255, 217, 0);
+    font-size: 15px;
+}
+    </style>
+</head>
+<body>
+    <div class="contact-box">
+    <form action="#">
+        <H1 class="heading">Contact Us</H1>
+    <input type="text" class="input-field" placeholder="Name">
+    <input type="email" class="input-field" placeholder="Email">
+    <input type="text" class="input-field" placeholder="Subject">
+    <input type="file" class="input-field" placeholder="File">
+    <textarea type="text"placeholder="Message" class="input-field textarea-field"></textarea>
+    <button type="button" class="btn"> Send Message</button>
+    </form>
+    </div>
+</body>
+</html>

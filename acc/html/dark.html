@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+  background-color: #fff; /* Default light mode background */
+  color: #333; /* Default light mode text color */
+}
+
+.dark-mode {
+  background-color: #333; /* Dark mode background */
+  color: #fff; /* Dark mode text color */
+}
+/* button{
+  display: none;
+  visibility: none;
+} */
+
+  </style>
+
+  <script>
+    function toggleDarkMode() {
+  const body = document.body;
+  const darkModeToggle = document.getElementById('sun');
+  
+  // Check if dark mode class is present on the body
+  const darkModeEnabled = body.classList.toggle('dark-mode');
+
+  // Update the button icon based on the current mode
+  if (darkModeEnabled) {
+    darkModeToggle.innerHTML = '<ion-icon name="moon"></ion-icon>'; // Moon icon for dark mode
+  } else {
+    darkModeToggle.innerHTML = '<ion-icon name="sunny"></ion-icon>'; // Sun icon for light mode
+  }
+}
+
+  </script>
+</head>
+<body>
+  <button id="sun" onclick="toggleDarkMode()"><ion-icon name="sunny"></ion-icon></button>
+  <h1>Welcome to My Website</h1>
+  <p>This is some sample text on the page.</p>
+
+  <script src="script.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+ 

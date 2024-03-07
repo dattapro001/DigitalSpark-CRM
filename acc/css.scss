@@ -1,0 +1,11 @@
+$primary: rgba(23, 190, 187, 1);
+$secondary: rgba(240, 166, 202, 1);
+
+$active: rgba(23, 190, 187, 0.8);
+$busy: rgba(252, 100, 113, 0.8);
+$away: rgba(255, 253, 130, 0.8);
+
+body{
+    background: linear-gradient(120deg, $primary, $secondary);
+    background-color: rgb(7, 67, 101) ;
+}

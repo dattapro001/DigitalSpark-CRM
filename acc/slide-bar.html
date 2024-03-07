@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalSpark CRM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    
+
+    
+    <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Font Links -->
+<link href='https://fonts.googleapis.com/css?family=Salsa' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Spicy Rice' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Squada One' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Suez One' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Timmana' rel='stylesheet'>
+
+    <!-- Your custom CSS variables -->
+
+    <style>
+           :root {
+  --bs-blue: #63B3ED;
+  --bs-indigo: #596CFF;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #F56565;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #FBD38D;
+  --bs-green: #81E6D9;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #f0f2f5;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #e91e63;
+  --bs-secondary: #7b809a;
+  --bs-success: #4CAF50;
+  --bs-info: #1A73E8;
+  --bs-warning: #fb8c00;
+  --bs-danger: #F44335;
+  --bs-light: #f0f2f5;
+  --bs-dark: #344767;
+  --bs-white: #fff;
+  --bs-dark-blue: #1A237E;
+  --bs-primary-rgb: 233, 30, 99;
+  --bs-secondary-rgb: , 128, 154;
+  --bs-success-rgb: 76, 175, 80;
+  --bs-info-rgb: 26, 115, 232;
+  --bs-warning-rgb: 251, 140, 0;
+  --bs-danger-rgb: 244, 67, 53;
+  --bs-light-rgb: 240, 242, 245;
+  --bs-dark-rgb: 52, 71, 103;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-dark-blue-rgb: 26, 35, 126;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-body-color-rgb: , 128, 154;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-font-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: #7b809a;
+  --bs-body-bg: #fff;
+  --bs-border-width: 1px;
+  --bs-border-style: solid;
+  --bs-border-color: #dee2e6;
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --bs-border-radius: 0.375rem;
+  --bs-border-radius-sm: 0.125rem;
+  --bs-border-radius-lg: 0.5rem;
+  --bs-border-radius-xl: 0.75rem;
+  --bs-border-radius-2xl: 1rem;
+  --bs-border-radius-pill: 50rem;
+  --bs-link-color: #e91e63;
+  --bs-link-hover-color: #e91e63;
+  --bs-code-color: #d63384;
+  --bs-highlight-bg: #fcf8e3;
+    }
+
+    body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('img/admin-log1.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover; 
+  
+        }
+
+    .nav {
+      background-color: rgb(0,0,0,0.5); 
+    
+    }
+
+    .nav-link.active,
+    .nav-link:active {
+      background-color: rgb(254,190,16) !important;
+      margin-left: 8px;
+      width: 195px;
+      height: 40px;
+      color: black !important;
+    }
+
+        img {
+            object-fit: cover;
+            border-radius: 50%;
+            height: 45px;
+            width: 45px;
+            margin-left: 30px;
+        }
+
+        .progress-bar {
+            width: 0;
+            transition: width 0.3s ease;
+        }
+
+      
+        .loader {
+          border: 16px solid rgb(0,0,0,0.9);
+          border-radius: 50%;
+          border-top: 16px ;
+          width: 80px;
+          height: 80px;
+          -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+          margin-top: 30px;
+          margin-left: 40px;
+        }
+
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        .ket::-webkit-scrollbar { 
+        display: none; 
+ }
+</style>
+
+
+</head>
+<body>
+    <div class="container-fluid mt-1">
+        <div class="row">
+
+            <!-- Sidebar -->
+            <div class="col-md-2" id="sidebar" style="margin-top: 110px; " >
+            <ul class="nav nav-pills flex-column  mt-1 card" style="border-radius: 10px; width: 215px; height: 440px; position: fixed; border: 2px solid rgb(254,190,16) " role="tablist">
+              <header class="justify-content-center align-items-center " style="background-color:rgb(254,190,16);border-radius: 10px 10px 0px 0px">
+                <img src="uploaded_img\<?php echo $data['profile'] ?>" class="mt-3" style="object-fit: cover; border-radius: 50%; height: 60px; width: 60px; margin-left: 80px;">
+                <p class="text-dark mt-2 " style="margin-left: 30px; font-family: Salsa;"><?php echo $data['name']; ?></p>
+              </header>
+              <li class="nav-item mt-3">
+                <a class="nav-link d-flex active" data-bs-toggle="pill" style="color: #fff" href="#pogo"><i class="fa fa-keyboard-o px-4" style="font-size:20px;"></i><b>Project</b></a>
+              </li>     
+              <li class="nav-item mt-3">
+                <a class=" d-flex " href="manager-admin-chat.php?user_id=<?php echo $admin['unique_id'] ?>" style="color: #fff"  style="text-decoration: none;"><i class="fa fa-user px-4" style="font-size:20px; margin-left: 17px;"></i><b>Chat</b></a>
+              </li>
+              <li class="nav-item mt-3">
+                <a class="nav-link  d-flex " data-bs-toggle="pill" href="#profile" style="color: #fff" ><i class="fa fa-bar-chart px-4" style="font-size:20px"></i><b>Profile</b></a>
+              </li>    
+              <li class="nav-item mt-3">
+                <a class="nav-link d-flex t" data-bs-toggle="pill" href="#contact" style="color: #fff" ><i class="fa fa-file-invoice px-4" style="font-size:20px"></i><b>Submission</b></a>
+              </li>
+              <li class="nav-item mt-3">
+                <a class="nav-link d-flex " data-bs-toggle="modal" data-bs-target="#logout" style="cursor:pointer;color: #fff" >             
+                <i class="fas fa-sign-out-alt px-4" style="font-size: 24px;"></i><b>Logout</b></a>
+              </li>
+            </ul>
+     <!-- slider end -->
+    </div>
+
+        
+
+            <!-- Tab panes -->
+            <div class="col-md-8">
+                <div class="tab-content" style="font-family: Salsa">
+                    <!-- Dashboard Tab -->
+
+
+
+                          <div id="profile" class="container tab-pane">
+                              <div class="d-flex" style="margin-left: 0px; position: fixed">
+                                  <div class="card bg-info mt-3" style="height: 600px; width: 780px; margin-left: -10px;">
+                                    
+                                    
+
+                                     <div class="col-lg-11">
+    <div class="container card" style="border-radius: 20px; height: 600px; background-color: rgb(0,0,0,0.6);border-color: rgb(254,190,16);">
+
+      <div class="row">
+        <div class="col-lg-6">
+
+          <!-- <img class="border-outline-primary " src="<?php echo $arrayData['d_profile'] ?>" alt="">
+          <div class="div" style=" margin-top:-45px;margin-left: 300px;">
+          <a class="btn btn-outline-warning" href="#" id="cameraIcon2"><i  class="fa fa-camera"></i></a>
+          </div>
+          <div class="dropdown-menu bg-primary" id="imageDropdown">
+          <form action="dev-profile-change-action.php" method="post" enctype="multipart/form-data"
+          class="image-form">
+          <input type="file" name="image" id="image">
+          <button type="submit">Change Image</button>
+          </form>
+          </div> -->
+            
+  <!-- <h1 class="text-light mt-4" style="font-size: 18px; text-decoration: underline">What I do</h1> 
+         
+  <div class="next">
+  <form action="dev-profile-1.php" method="post">
+  <button class="btn btn-outline-warning">
+    <i style="font-size: 15px; color:" class="fa-solid fa-folder-open p-1"></i>
+</button>
+  <div class="box mt-3" >
+  <textarea style="background-color: rgb(0,0,0,0.6);border-color: rgb(254,190,16);" class="form-control text-light" rows="3" id="comment"
+  name="skill_1"><?php echo $arrayData['d_skill']; ?></textarea>
+  </div>
+  </form>
+
+  <form  action="dev-profile-1.php" method="post">
+  <button class="btn btn-outline-warning mt-2">
+    <i style="font-size: 15px;" class="fa-solid fa-share-from-square "></i>
+</button>
+
+  <div class="box mt-3" >
+  <textarea style="background-color: rgb(0,0,0,0.6);border-color: rgb(254,190,16);" class="form-control text-light" rows="3" id="comment"
+  name="skill_2"><?php echo $arrayData['skill_2']; ?></textarea>
+  </div>
+  </form>
+  
+</div> -->
+
+
+
+        <!-- </div> -->
+<!-- 
+        <div class="col-lg-6" >
+        <div class="nameskillbut">
+
+        <div class="skill">
+
+        <p style="color: #CCCCCC; margin-bottom: 5px; font-size: 18px;">
+        <?php echo $arrayData['d_skill']; ?>
+        </p>
+
+        <h1 class="p-0" style="color: white; font-size: 25px; margin-top: 0;">
+        <?php echo $arrayData['name']; ?>
+        </h1>
+
+        <form action="dev-profile-1.php" method="post">
+        <div class="box" >
+        <textarea style="background-color: rgb(0,0,0,0.6);border-color: rgb(254,190,16);" class="form-control text-light w-100" rows="5" id="comment"
+        name="text"><?php echo $arrayData['d_bio']; ?></textarea>
+        </div>
+        <button  type="submit" id="submit" class="btn btn-outline-warning border-2 mt-2"><i style="font-size:15px;"
+        class="fa-solid fa-pen-to-square"></i></button>
+        </form>
+
+        </div>  -->
+      
+        
+        <!-- </div>
+       
+        <form style="margin-top: 35px;" action="dev-profile-1.php" method="post">
+        <button class="btn btn-outline-warning mt-4" type="submit">
+        <i style="font-size: 15px;" class="fa-solid fa-pen-to-square "></i>
+        </button>
+        <div class="box mt-3" >
+        <textarea style="background-color: rgb(0,0,0,0.6);border-color: rgb(254,190,16);" class="form-control text-light mt-1" rows="3" id="comment"
+        name="skill_3"><?php echo $arrayData['skill_3']; ?>
+        </textarea>
+        </div>
+        </form>
+
+         
+        <form class="" action="dev-profile-1.php" method="post">
+        <button class="btn btn-outline-warning mt-2" type="submit">
+        <i style="font-size: 15px;" class="fa-solid fa-print "></i>
+        </button>
+        <div class="box" >
+        <textarea style="background-color: rgb(0,0,0,0.6);border-color: rgb(254,190,16);" class="form-control text-light mt-3" rows="3" id="comment"
+        name="skill_4"><?php echo $arrayData['skill_4']; ?>
+        </textarea>
+        </div>
+        </form>
+        
+</div>
+
+
+
+                              </div>
+                              </div>
+                          </div>
+                    
+                      
+                        <div id="contact" class="container tab-pane">
+                              <div class="d-flex" style="margin-left: 0px; position: fixed">
+                                  <div class="card  mt-2" style="height: 625px; width: 788px; margin-left: 0px; border-radius: 20px; background-color: rgb(0,0,0,0.6); border-color: rgb(254,190,16);">
+                                   
+
+                            <div class="container mt-2 text-dark">
+                          <div class="row">
+
+                            <div class="col-md-6 mt-2">
+                              <h2 class="text-light">Project Submission</h2>
+                              <form action="#" method="POST" enctype="multipart/form-data">
+                                  <label for="name" class="text-light">Your Name & Unique ID</label>
+                                  <input type="text" class="form-control btn btn-outline-warning" style="" id="name" name="name" value="
+<?php echo $data['name'] ?>,
+<?php echo $data['unique_id'] ?>
+                                  " required>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top: 53px;">
+                                  <label for="email" class="text-light">Project Name & Unique ID</label>
+                                  <select class="form-select btn btn-outline-warning" name="project" id="manager">
+                                <?php
+                                  $query = "SELECT * FROM `project` WHERE manager_id = {$user_id}";
+                                  $allData = mysqli_query($conn, $query);
+                                  $output3="";
+                                  if (mysqli_num_rows($allData) > 0) {
+                                      while ($arrayData = mysqli_fetch_array($allData)) {
+                                          echo '<option>' . $arrayData['name'] . ','. $arrayData['unique_id'] .'</option>';
+                                      }
+                                  } else {
+                                      echo '<option>No project managers found</option>';
+                                  }
+                                    ?>
+                                </select>
+
+                                </div>
+                                
+                                <div class="col-md-6 mt-2">
+                                <label for="manager" class="text-light">Developer 1 Name & Unique ID</label>
+                                <select class="form-select btn btn-outline-warning" name="dev1" id="manager">
+                                <?php
+                                  $query = "SELECT * FROM `project` WHERE manager_id = {$user_id}";
+                                  $allData = mysqli_query($conn, $query);
+                                  $output3="";
+                                  if (mysqli_num_rows($allData) > 0) {
+                                      while ($arrayData = mysqli_fetch_array($allData)) {
+                                        echo '<option>' . $arrayData['developer_1'] . ','. $arrayData['developer_1_id'] .'</option>';
+                                      }
+                                  } else {
+                                      echo '<option>No project managers found</option>';
+                                  }
+                                    ?>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6 mt-2">
+                                <label for="manager" class="text-light">Developer 2 Name & Unique ID</label>
+                                <select class="form-select btn btn-outline-warning" name="dev2" id="manager">
+                                <?php
+                                  $query = "SELECT * FROM `project` WHERE manager_id = {$user_id}";
+                                  $allData = mysqli_query($conn, $query);
+                                  $output3="";
+                                  if (mysqli_num_rows($allData) > 0) {
+                                      while ($arrayData = mysqli_fetch_array($allData)) {
+                                          echo '<option>' . $arrayData['developer_2'] . ','. $arrayData['developer_2_id'] .'</option>';
+                                      }
+                                  } else {
+                                      echo '<option>No project managers found</option>';
+                                  }
+                                    ?>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6 mt-2">
+                                <label for="manager" class="text-light">Developer 3 Name & Unique ID</label>
+                                <select class="form-select btn btn-outline-warning" name="dev3" id="manager">
+                                <?php
+                                  $query = "SELECT * FROM `project` WHERE manager_id = {$user_id}";
+                                  $allData = mysqli_query($conn, $query);
+                                  $output3="";
+                                  if (mysqli_num_rows($allData) > 0) {
+                                      while ($arrayData = mysqli_fetch_array($allData)) {
+                                        echo '<option>' . $arrayData['developer_3'] . ','. $arrayData['developer_3_id'] .'</option>';
+                                      }
+                                  } else {
+                                      echo '<option>No project managers found</option>';
+                                  }
+                                    ?>
+                                </select>
+
+                            </div>
+
+                                <div class="col-md-6">
+                                  <label for="email" class="mt-2 text-light">Your Email</label>
+                                  <input type="email" class="form-control btn btn-outline-warning" style="" id="email" name="email"
+                                  value="<?php echo $data['email'] ?>" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <label for="email" class="mt-2 text-light">Upload Project Files (Zip)</label>
+                                  <input type="file" class="form-control btn btn-outline-warning" style="" id="email" name="file" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <label for="message" class="mt-2 text-light">Project Details</label>
+                                  <textarea class="form-control text-warning" style="border-color:yellow; background-color: rgb(0,0,0,0.6);" id="message" name="txt" rows="6" required></textarea>
+                                </div>
+
+                                <input type="submit" name="submit" class="btn btn-outline-warning w-75 mt-3" style="margin-left: 90px;" value="Submit Work">
+                              </form>
+                            </div>
+                          </div>
+                        
+                        
+
+
+                              </div>
+                              </div>
+                          </div>
+
+
+                  
+                  
+                  
+                     
+              
+
+
+               
+
+                         
+                   
+                  
+                    
+
+
+                    <!-- tab-content -->
+                </div>
+                <!-- col-md-8 -->
+            </div>
+  
+
+      
+
+
+            <!-- row -->
+        </div>
+
+   <!--COntainer  -->
+    </div>
+
+     <!-- The Logout Modal -->
+     <div class="modal" id="logout">
+                    <div class="modal-dialog w-25" style="margin-top: 250px;">
+                      <div class="modal-content" style="background-color: rgb(0,0,0,0.8); border-color:rgb(254,190,16);  ; ">
+
+                        <!-- Modal body -->
+                        <div class="modal-body text-light">
+                          <b>Are you sure to Logout?</b>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-warning"><a href="manager-logout.php?logout_id=<?php echo $user_id; ?>" style="text-decoration:none; color: white;">Yes</a></button>
+                          <button type="button" class="btn bg-warning" data-bs-dismiss="modal">No</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+    
+
+    <!-- Initialize Tabs Using JavaScript -->
+<script>
+ 
+ $(document).ready(function () {
+    // Show the first tab content by default
+    $('#pogo').addClass('show active');
+
+    $('.project-link, .nav-link').click(function (e) {
+        // Prevent the default action of the link
+        e.preventDefault();
+
+        // Remove active class from all project links
+        $('.project-link, .nav-link').removeClass('active');
+
+        // Add active class to the clicked project link
+        $(this).addClass('active');
+
+        // Show the corresponding tab content
+        var tabId = $(this).attr('href');
+        $('.tab-pane').removeClass('show active');
+        $(tabId).addClass('show active');
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+            // Click event for navigation items
+            var navLinks = document.querySelectorAll('a.nav-link');
+        
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+        
+                    var projectId = this.id.replace('project-tab', '');
+        
+                    // Create a new XMLHttpRequest object
+                    var xhr = new XMLHttpRequest();
+        
+                    // Configure it to make a POST request to 'manager-details.php'
+                    xhr.open('POST', 'manager-details.php', true);
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        
+                    // Define the callback function to handle the response
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200) {
+                                // Update the content dynamically
+                                var container = document.getElementById('project' + projectId);
+                                if (container) {
+                                    container.getElementsByClassName('d-flex')[0].innerHTML = xhr.responseText;
+                                }
+                            } else {
+                                console.error('Error:', xhr.status, xhr.statusText);
+                            }
+                        }
+                    };
+        
+                    // Send the AJAX request with the project ID
+                    xhr.send('project_id=' + projectId);
+                });
+            });
+        });
+
+
+
+ 
+
+
+   
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
